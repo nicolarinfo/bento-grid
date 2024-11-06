@@ -1,0 +1,16 @@
+.content-creation {
+  @include flex-center;
+  background-color: $yellow_100;
+
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: content-creation;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  img {
+    width: 60%;
+  }
+}

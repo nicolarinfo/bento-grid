@@ -1,0 +1,22 @@
+.schedule-social {
+  @include flex-center;
+  justify-content: space-between;
+  background-color: $purple_100;
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: schedule-social;
+  }
+  h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0 8px;
+  }
+
+  img {
+    width: 95%;
+  }
+
+  p {
+    text-align: center;
+  }
+}

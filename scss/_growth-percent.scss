@@ -1,0 +1,7 @@
+.growth-percent {
+  @include flex-center;
+  background-color: $white;
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: growth-percent;
+  }
+}

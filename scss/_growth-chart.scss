@@ -1,0 +1,17 @@
+.growth-chart {
+  @include flex-center;
+  background-color: $purple_500;
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: growth-chart;
+    flex-direction: row;
+  }
+  h2 {
+    color: $white;
+    text-align: center;
+    max-width: 60%;
+    font-weight: 500;
+  }
+  img {
+    width: 70%;
+  }
+}

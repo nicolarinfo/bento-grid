@@ -1,0 +1,12 @@
+.content-ai {
+  @include flex-center;
+  background-color: $yellow_500;
+  align-self: stretch;
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: content-ai;
+  }
+  img {
+    max-width: 60%;
+    align-self: flex-start;
+  }
+}

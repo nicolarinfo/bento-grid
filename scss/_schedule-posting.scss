@@ -1,0 +1,11 @@
+.schedule-posting {
+  @include flex-center;
+  background-color: $yellow_500;
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: schedule-posting;
+  }
+  img {
+    width: 70%;
+    align-self: flex-start;
+  }
+}

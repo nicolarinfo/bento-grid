@@ -1,0 +1,28 @@
+.rating {
+  background-color: $purple_500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: rating;
+  }
+  &__title {
+    color: $white;
+    text-align: center;
+    width: 60%;
+
+    span {
+      color: $yellow_500;
+    }
+  }
+
+  &__five-stars {
+    width: 50%;
+  }
+  &__description {
+    color: $white;
+  }
+}

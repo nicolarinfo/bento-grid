@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font_family, sans-serif;
+  color: $black;
+  background-color: $background-body;
+  font-size: $font_size_paragraph;
+  padding: 16px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+
+  @media (min-width: $desktop-breakpoint) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "content-creation rating rating schedule-social"
+      "content-creation rating rating schedule-social"
+      "content-ai social-network schedule-posting schedule-social"
+      "content-ai social-network schedule-posting schedule-social"
+      "content-ai growth-percent  growth-chart growth-chart";
+  }
+}
+
+img {
+  max-width: 100%;
+}
