@@ -3,6 +3,26 @@
   background-color: $yellow_500;
   @media (min-width: $desktop-breakpoint) {
     grid-area: schedule-posting;
+    position: relative;
+    justify-content: flex-start;
+    h2 {
+      text-align: left;
+      width: 60%;
+      align-self: flex-start;
+      font-weight: bold;
+      margin-left: 2.5rem;
+      margin-top: 1rem;
+      line-height: 2rem;
+      font-size: 2rem;
+    }
+
+    img {
+      position: absolute;
+      bottom: -70px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    
   }
   img {
     width: 70%;

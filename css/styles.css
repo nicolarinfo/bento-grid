@@ -17,21 +17,29 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
   gap: 20px;
-  width: 100%;
-  max-width: 1200px;
+  margin: 0 auto;
+  max-width: 1440px;
 }
 @media (min-width: 600px) {
   .container {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas: "content-creation rating rating schedule-social" "content-creation rating rating schedule-social" "content-ai social-network schedule-posting schedule-social" "content-ai social-network schedule-posting schedule-social" "content-ai growth-percent  growth-chart growth-chart";
+    grid-template-rows: repeat(10, minmax(75px, auto));
+    gap: 2rem;
+    grid-template-areas: "content-creation     rating         rating          schedule-social" "content-creation     rating         rating          schedule-social" "content-creation     rating         rating          schedule-social" "content-creation     rating         rating          schedule-social" "content-creation   social-network schedule-posting schedule-social" "content-ai   social-network schedule-posting schedule-social" "content-ai   social-network schedule-posting schedule-social" "content-ai       growth-percent growth-chart    growth-chart" "content-ai       growth-percent growth-chart    growth-chart" "content-ai       growth-percent growth-chart    growth-chart";
   }
+}
+
+section {
+  overflow: hidden;
 }
 
 img {
   max-width: 100%;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .rating {
@@ -46,17 +54,34 @@ img {
   .rating {
     grid-area: rating;
   }
+  .rating__title {
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    font-size: 4rem;
+    padding: 0 2rem;
+  }
+  .rating__title-span {
+    color: hsl(39, 100%, 71%);
+  }
+  .rating__five-stars {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 40%;
+  }
 }
 .rating__title {
   color: hsl(0, 0%, 100%);
   text-align: center;
-  width: 60%;
+  font-size: 2.5rem;
+  padding: 0 2rem;
 }
-.rating__title span {
+.rating__title-span {
   color: hsl(39, 100%, 71%);
 }
 .rating__five-stars {
-  width: 50%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 40%;
 }
 .rating__description {
   color: hsl(0, 0%, 100%);
@@ -71,17 +96,31 @@ img {
   border-radius: 8px;
   background-color: hsl(0, 0%, 100%);
 }
-@media (min-width: 600px) {
-  .social-network {
-    grid-area: social-network;
-  }
-}
 .social-network img {
   width: 100%;
 }
 .social-network h2 {
   font-size: 18px;
   text-align: left;
+}
+@media (min-width: 600px) {
+  .social-network {
+    grid-area: social-network;
+    position: relative;
+  }
+  .social-network img {
+    width: 100%;
+    position: absolute;
+    left: 10%;
+    top: 5%;
+  }
+  .social-network h2 {
+    font-size: 18px;
+    text-align: left;
+    padding: 0 2rem;
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
 }
 
 .schedule-posting {
@@ -96,6 +135,24 @@ img {
 @media (min-width: 600px) {
   .schedule-posting {
     grid-area: schedule-posting;
+    position: relative;
+    justify-content: flex-start;
+  }
+  .schedule-posting h2 {
+    text-align: left;
+    width: 60%;
+    align-self: flex-start;
+    font-weight: bold;
+    margin-left: 2.5rem;
+    margin-top: 1rem;
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  .schedule-posting img {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
 .schedule-posting img {
@@ -110,13 +167,8 @@ img {
   align-items: center;
   padding: 12px;
   border-radius: 8px;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: hsl(254, 88%, 90%);
-}
-@media (min-width: 600px) {
-  .schedule-social {
-    grid-area: schedule-social;
-  }
 }
 .schedule-social h2 {
   text-align: center;
@@ -130,6 +182,31 @@ img {
 .schedule-social p {
   text-align: center;
 }
+@media (min-width: 600px) {
+  .schedule-social {
+    grid-area: schedule-social;
+  }
+  .schedule-social h2 {
+    font-size: 2rem;
+    text-align: left;
+    width: 70%;
+    font-weight: 700;
+    align-self: center;
+    margin-right: 2rem;
+    line-height: 2rem;
+  }
+  .schedule-social img {
+    margin-left: 50px;
+    height: 50%;
+    border-radius: 8px;
+  }
+  .schedule-social p {
+    margin-bottom: 2rem;
+    text-align: left;
+    align-self: center;
+    width: 80%;
+  }
+}
 
 .growth-chart {
   display: flex;
@@ -140,20 +217,32 @@ img {
   border-radius: 8px;
   background-color: hsl(256, 67%, 59%);
 }
+.growth-chart h2 {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  max-width: 70%;
+  font-weight: 500;
+}
+.growth-chart img {
+  width: 70%;
+}
 @media (min-width: 600px) {
   .growth-chart {
     grid-area: growth-chart;
     flex-direction: row;
   }
-}
-.growth-chart h2 {
-  color: hsl(0, 0%, 100%);
-  text-align: center;
-  max-width: 60%;
-  font-weight: 500;
-}
-.growth-chart img {
-  width: 70%;
+  .growth-chart h2 {
+    color: hsl(0, 0%, 100%);
+    text-align: left;
+    max-width: 60%;
+    font-weight: 500;
+    margin-left: 1rem;
+    font-size: 3rem;
+    width: 90%;
+  }
+  .growth-chart img {
+    width: 70%;
+  }
 }
 
 .growth-percent {
@@ -168,6 +257,17 @@ img {
 @media (min-width: 600px) {
   .growth-percent {
     grid-area: growth-percent;
+    padding: 0 2rem;
+  }
+  .growth-percent h2 {
+    font-size: 4rem;
+    align-self: flex-start;
+  }
+  .growth-percent p {
+    align-self: flex-start;
+  }
+  .growth-percent img {
+    margin-top: 2rem;
   }
 }
 
@@ -179,37 +279,46 @@ img {
   padding: 12px;
   border-radius: 8px;
   background-color: hsl(31, 66%, 93%);
+  gap: 20px;
 }
 @media (min-width: 600px) {
   .content-creation {
     grid-area: content-creation;
   }
   .content-creation h2 {
-    font-size: 2rem;
+    font-size: 2.3rem;
+    font-weight: 500;
+    width: 70%;
+    text-align: left;
+    line-height: 2.5rem;
   }
 }
 .content-creation img {
-  width: 60%;
+  width: 65%;
 }
 
 .content-ai {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  border-radius: 8px;
+  justify-content: space-evenly;
   background-color: hsl(39, 100%, 71%);
-  align-self: stretch;
 }
 @media (min-width: 600px) {
   .content-ai {
     grid-area: content-ai;
   }
+  .content-ai h2 {
+    align-self: flex-start;
+    font-size: 2.25rem;
+    text-align: left;
+    max-width: 80%;
+    padding: 0 2.25rem;
+    line-height: 2rem;
+  }
 }
 .content-ai img {
-  max-width: 60%;
-  align-self: flex-start;
+  max-width: 80%;
+  align-self: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

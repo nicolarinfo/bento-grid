@@ -1,9 +1,6 @@
 .social-network {
   @include flex-center;
   background-color: $white;
-  @media (min-width: $desktop-breakpoint) {
-    grid-area: social-network;
-  }
   img {
     width: 100%;
   }
@@ -11,4 +8,26 @@
     font-size: 18px;
     text-align: left;
   }
+
+  @media (min-width: $desktop-breakpoint) {
+    grid-area: social-network;
+    position: relative;
+
+  
+    img {
+      width: 100%;
+      position: absolute;
+      left: 10%;
+      top: 5%;
+    }
+    h2 {
+      font-size: 18px;
+      text-align: left;
+      padding: 0 2rem;
+      font-size: 2rem;
+      margin-top: 4rem;
+    }
+    
+  }
+ 
 }

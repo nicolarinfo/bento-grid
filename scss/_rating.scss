@@ -8,19 +8,48 @@
 
   @media (min-width: $desktop-breakpoint) {
     grid-area: rating;
+
+    &__title {
+      color: $white;
+      text-align: center;
+      font-size: 4rem;
+      padding: 0 2rem;
+  
+      
+  
+    }
+  
+    &__title-span {
+      color: $yellow_500;
+    }
+  
+    &__five-stars {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  
+      width: 40%;
+    }
+  
   }
   &__title {
     color: $white;
     text-align: center;
-    width: 60%;
+    font-size: 2.5rem;
+    padding: 0 2rem;
 
-    span {
-      color: $yellow_500;
-    }
+    
+
+  }
+
+  &__title-span {
+    color: $yellow_500;
   }
 
   &__five-stars {
-    width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    width: 40%;
   }
   &__description {
     color: $white;

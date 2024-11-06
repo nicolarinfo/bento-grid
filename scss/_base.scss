@@ -17,23 +17,43 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+ 
   gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-
+  
+  margin: 0 auto;
+  max-width: 1440px;
   @media (min-width: $desktop-breakpoint) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(10, minmax(75px, auto));
+    gap: 2rem;
     grid-template-areas:
-      "content-creation rating rating schedule-social"
-      "content-creation rating rating schedule-social"
-      "content-ai social-network schedule-posting schedule-social"
-      "content-ai social-network schedule-posting schedule-social"
-      "content-ai growth-percent  growth-chart growth-chart";
+    "content-creation     rating         rating          schedule-social"
+    "content-creation     rating         rating          schedule-social"
+    "content-creation     rating         rating          schedule-social"
+    "content-creation     rating         rating          schedule-social"
+    "content-creation   social-network schedule-posting schedule-social"
+
+    "content-ai   social-network schedule-posting schedule-social"
+    "content-ai   social-network schedule-posting schedule-social"
+
+    "content-ai       growth-percent growth-chart    growth-chart"
+    "content-ai       growth-percent growth-chart    growth-chart"
+    "content-ai       growth-percent growth-chart    growth-chart";
   }
+
+
+
 }
 
+section {
+  overflow: hidden;
+}
 img {
   max-width: 100%;
 }
+
+.italic {
+  font-style: italic;
+}
+
+
